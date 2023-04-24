@@ -16,9 +16,10 @@ class MyApp
         Console.WriteLine($"My name is {name}.I'm from {location}.");
         DateTime todayDate = DateTime.Now;
         Console.WriteLine("Current Date:"+todayDate.ToString("MM/dd/yyyy"));
-        DateTime christmas = new DateTime(2023 / 12 / 25);
-        string dateDiff = (christmas.Date - todayDate.Date).Days.ToString();
-        Console.WriteLine($"There are {dateDiff} until christmas ");
+        DateTime christmas = new DateTime(2023 , 12, 25);
+        TimeSpan dateDiff = christmas - todayDate;
+        int days = (int)dateDiff.TotalDays;
+        Console.WriteLine($"There are {days} days until christmas ");
         Console.WriteLine("Enter your width in metres just digit only");
         widthString = Console.ReadLine();
         width = Double.Parse(widthString);
